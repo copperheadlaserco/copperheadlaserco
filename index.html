@@ -1262,6 +1262,165 @@
     .collection-items { grid-template-columns: 1fr; }
   }
 
+
+  /* ─── BUSINESS ─── */
+  #business { background: var(--dark-2); }
+
+  .biz-intro-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 2rem;
+    flex-wrap: wrap;
+    margin-bottom: 3rem;
+  }
+
+  .biz-use-cases {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 1.5rem;
+    margin-bottom: 3.5rem;
+  }
+
+  .biz-card {
+    background: var(--dark-3);
+    border: 1px solid rgba(181,101,29,0.15);
+    padding: 2rem 1.75rem;
+    transition: border-color 0.25s, transform 0.2s;
+  }
+
+  .biz-card:hover { border-color: rgba(181,101,29,0.4); transform: translateY(-3px); }
+
+  .biz-icon { font-size: 1.8rem; margin-bottom: 1rem; }
+
+  .biz-card-title {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 1.3rem;
+    letter-spacing: 0.06em;
+    color: var(--copper-glow);
+    margin-bottom: 0.5rem;
+  }
+
+  .biz-card-desc {
+    font-size: 0.92rem;
+    color: var(--muted);
+    line-height: 1.6;
+    margin-bottom: 0.6rem;
+  }
+
+  .biz-card-tag {
+    display: inline-block;
+    font-size: 0.72rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--copper);
+    border: 1px solid rgba(181,101,29,0.3);
+    padding: 0.2rem 0.6rem;
+  }
+
+  .biz-split {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    align-items: start;
+    margin-bottom: 3.5rem;
+  }
+
+  .biz-why-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .biz-why-item {
+    display: flex;
+    gap: 0.9rem;
+    align-items: flex-start;
+  }
+
+  .biz-why-bullet {
+    color: var(--copper);
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 1.1rem;
+    line-height: 1.4;
+    flex-shrink: 0;
+  }
+
+  .biz-why-item strong { color: var(--white); font-weight: 600; }
+  .biz-why-item span { color: var(--muted); font-size: 0.92rem; display: block; }
+
+  .standing-account-box {
+    background: var(--dark-3);
+    border: 1px solid rgba(181,101,29,0.25);
+    padding: 2rem;
+  }
+
+  .standing-account-box h3 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 1.6rem;
+    letter-spacing: 0.06em;
+    color: var(--copper-glow);
+    margin-bottom: 0.75rem;
+  }
+
+  .standing-account-box p {
+    font-size: 0.92rem;
+    color: var(--muted);
+    line-height: 1.6;
+    margin-bottom: 1rem;
+  }
+
+  .standing-account-box ul {
+    list-style: none;
+    margin-bottom: 1.25rem;
+  }
+
+  .standing-account-box li {
+    font-size: 0.88rem;
+    color: var(--light);
+    opacity: 0.85;
+    padding-left: 1.2rem;
+    position: relative;
+    margin-bottom: 0.5rem;
+  }
+
+  .standing-account-box li::before {
+    content: '▶';
+    position: absolute;
+    left: 0;
+    color: var(--copper);
+    font-size: 0.65rem;
+    top: 3px;
+  }
+
+  .biz-cta-row {
+    background: var(--dark-3);
+    border: 1px solid rgba(181,101,29,0.2);
+    padding: 2.5rem;
+    text-align: center;
+  }
+
+  .biz-cta-row h3 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 1.8rem;
+    letter-spacing: 0.06em;
+    color: var(--white);
+    margin-bottom: 0.75rem;
+  }
+
+  .biz-cta-row p {
+    color: var(--muted);
+    font-style: italic;
+    margin-bottom: 1.5rem;
+    max-width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  @media (max-width: 768px) {
+    .biz-split { grid-template-columns: 1fr; gap: 2rem; }
+  }
+
 </style>
 </head>
 <body>
@@ -1275,6 +1434,7 @@
     <li><a href="#gallery">Gallery</a></li>
     <li><a href="#collections">Collections</a></li>
     <li><a href="#pricing">Pricing</a></li>
+    <li><a href="#business">For Businesses</a></li>
     <li><a href="#faq">FAQ</a></li>
     <li><a href="#order" class="nav-cta">Order Now</a></li>
   </ul>
@@ -1289,6 +1449,7 @@
   <a href="#gallery" onclick="toggleMenu()">Gallery</a>
   <a href="#collections" onclick="toggleMenu()">Collections</a>
   <a href="#pricing" onclick="toggleMenu()">Pricing</a>
+  <a href="#business" onclick="toggleMenu()">For Businesses</a>
   <a href="#faq" onclick="toggleMenu()">FAQ</a>
   <a href="#order" onclick="toggleMenu()" style="color: var(--copper-glow);">Order Now</a>
 </div>
@@ -1304,6 +1465,10 @@
     <a href="#order" class="btn-primary">Place an Order</a>
     <a href="#pricing" class="btn-outline">See Pricing</a>
   </div>
+  <p style="margin-top:1.75rem;font-size:0.85rem;color:var(--muted);">
+    Ordering for a business, brokerage, or venue?
+    <a href="#business" style="color:var(--copper-glow);text-decoration:underline;">See our B2B services &rarr;</a>
+  </p>
   <div class="hero-divider"></div>
 </section>
 
@@ -1840,6 +2005,170 @@
   </div>
 </section>
 
+<!-- BUSINESS / B2B -->
+<section id="business">
+  <div class="section-inner">
+    <div class="biz-intro-row">
+      <div>
+        <p class="section-label">For Businesses</p>
+        <h2 class="section-title">Your Brand. Permanently Engraved.</h2>
+        <div class="copper-rule"></div>
+        <p class="section-intro" style="margin-bottom:0;">Custom laser engraving for businesses, brokerages, venues, and local brands across the Shoals & Beyond.</p>
+      </div>
+      <a href="#business-quote" class="btn-primary" style="flex-shrink:0;">Request a Business Quote</a>
+    </div>
+
+    <div class="biz-use-cases">
+      <div class="biz-card">
+        <div class="biz-icon">🏷️</div>
+        <div class="biz-card-title">Branded Corporate Items</div>
+        <p class="biz-card-desc">Engraved keychains, coasters, pens, and signage with your logo.</p>
+        <span class="biz-card-tag">Bulk pricing · min. 10 units</span>
+      </div>
+      <div class="biz-card">
+        <div class="biz-icon">🏠</div>
+        <div class="biz-card-title">Real Estate Closing Gifts</div>
+        <p class="biz-card-desc">Welcome signs, keepsake boxes, serving boards — personalized per closing.</p>
+        <span class="biz-card-tag">Per-order or standing account</span>
+      </div>
+      <div class="biz-card">
+        <div class="biz-icon">🍽️</div>
+        <div class="biz-card-title">Venue & Restaurant Items</div>
+        <p class="biz-card-desc">Branded table signs, coaster sets, staff gifts, and award plaques.</p>
+        <span class="biz-card-tag">Fast local turnaround</span>
+      </div>
+      <div class="biz-card">
+        <div class="biz-icon">🎪</div>
+        <div class="biz-card-title">Event & Promotional Gifts</div>
+        <p class="biz-card-desc">Trade show giveaways, employee recognition, client thank-you sets.</p>
+        <span class="biz-card-tag">Order by item or full package</span>
+      </div>
+    </div>
+
+    <div class="biz-split">
+      <div>
+        <h3 style="font-family:'Bebas Neue',sans-serif;font-size:1.8rem;letter-spacing:0.06em;color:var(--white);margin-bottom:1.5rem;">Why Businesses Choose Copperhead</h3>
+        <div class="biz-why-list">
+          <div class="biz-why-item">
+            <div class="biz-why-bullet">▶</div>
+            <div><strong>Hyper-local.</strong><span>Based in Killen — in-person delivery, no middlemen, no shipping delays.</span></div>
+          </div>
+          <div class="biz-why-item">
+            <div class="biz-why-bullet">▶</div>
+            <div><strong>Fast turnaround.</strong><span>Most orders ready within 48–72 hours. Rush available.</span></div>
+          </div>
+          <div class="biz-why-item">
+            <div class="biz-why-bullet">▶</div>
+            <div><strong>Repeat business ready.</strong><span>Standing accounts, bulk discounts, consistent quality every order.</span></div>
+          </div>
+          <div class="biz-why-item">
+            <div class="biz-why-bullet">▶</div>
+            <div><strong>Professional precision.</strong><span>0.01mm engraving on wood, leather, slate, acrylic & coated metal.</span></div>
+          </div>
+          <div class="biz-why-item">
+            <div class="biz-why-bullet">▶</div>
+            <div><strong>No minimums on custom orders.</strong><span>One piece or one hundred — we do both.</span></div>
+          </div>
+          <div class="biz-why-item">
+            <div class="biz-why-bullet">▶</div>
+            <div><strong>Proof before production.</strong><span>Every order includes a design proof for your approval before anything is engraved.</span></div>
+          </div>
+          <div class="biz-why-item">
+            <div class="biz-why-bullet">▶</div>
+            <div><strong>Logo setup included.</strong><span>One-time setup fee of $15, waived on orders of 25+ units.</span></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="standing-account-box">
+        <h3>Standing Account Benefits</h3>
+        <p>Agents and businesses closing or ordering regularly can set up a standing account with Copperhead.</p>
+        <ul>
+          <li>Priority turnaround on every order</li>
+          <li>Consistent per-unit pricing locked for 6 months</li>
+          <li>Your logo on file — no repeat setup fees</li>
+          <li>Direct-to-door delivery throughout the Shoals area</li>
+        </ul>
+        <p style="margin-bottom:0;font-style:normal;">Ask about standing account setup on your first order — just mention it in the quote form below.</p>
+      </div>
+    </div>
+
+    <div class="biz-cta-row" id="business-quote">
+      <h3>Ready to Talk?</h3>
+      <p>Tell us about your business and what you need — we'll follow up with pricing and next steps.</p>
+      <button class="btn-primary" onclick="openBusinessModal()" style="border:none;cursor:pointer;">Request a Business Quote</button>
+    </div>
+  </div>
+</section>
+
+<!-- BUSINESS QUOTE MODAL -->
+<div class="collection-modal-overlay" id="business-modal-overlay" onclick="closeBusinessModalOnOverlay(event)">
+  <div class="collection-modal" id="business-modal">
+    <div class="modal-header">
+      <div>
+        <div class="modal-title">Business Quote Request</div>
+        <div class="modal-subtitle">Tell us about your business and what you need.</div>
+      </div>
+      <button class="modal-close" onclick="closeBusinessModal()">&#x2715;</button>
+    </div>
+    <div class="modal-body" id="business-modal-body">
+      <div id="business-form-wrap">
+        <div class="form-group">
+          <label for="biz-company">Business / Company Name</label>
+          <input type="text" id="biz-company" placeholder="Your business name">
+        </div>
+        <div class="form-group">
+          <label for="biz-name">Your Name</label>
+          <input type="text" id="biz-name" placeholder="Your name">
+        </div>
+        <div class="form-group">
+          <label for="biz-email">Email Address</label>
+          <input type="email" id="biz-email" placeholder="you@business.com">
+        </div>
+        <div class="form-group">
+          <label for="biz-phone">Phone / Text</label>
+          <input type="tel" id="biz-phone" placeholder="(256) 555-0100">
+        </div>
+        <div class="form-group">
+          <label for="biz-type">Business Type</label>
+          <select id="biz-type">
+            <option value="">— Select —</option>
+            <option>Real Estate / Brokerage</option>
+            <option>Restaurant / Bar / Venue</option>
+            <option>Retail / Boutique</option>
+            <option>Corporate / Office</option>
+            <option>Event Planning / Promotional</option>
+            <option>Other</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="biz-volume">Estimated Order Volume</label>
+          <select id="biz-volume">
+            <option value="">— Select —</option>
+            <option>One-time order (under 10 units)</option>
+            <option>Bulk order (10–50 units)</option>
+            <option>Large order (50+ units)</option>
+            <option>Interested in a standing account</option>
+            <option>Not sure yet</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="biz-details">Tell Us What You Need</label>
+          <textarea id="biz-details" placeholder="What are you looking to order? Logo files, timeline, budget range, or any other details..."></textarea>
+        </div>
+        <button class="modal-submit" id="business-submit-btn" onclick="submitBusinessQuote()">Send Quote Request</button>
+        <p style="font-size:0.8rem;color:var(--muted);text-align:center;margin-top:0.75rem;font-style:italic;">We'll follow up within 1 business day to discuss pricing and timeline.</p>
+      </div>
+      <div class="modal-success" id="business-modal-success">
+        <div style="font-size:2.5rem;margin-bottom:0.75rem;">✓</div>
+        <h3>Request Received!</h3>
+        <p>We'll be in touch within 1 business day to discuss your business needs.</p>
+        <button onclick="closeBusinessModal()" style="margin-top:1.5rem;background:none;border:1px solid var(--copper);color:var(--copper-glow);padding:0.6rem 1.5rem;font-family:'Bebas Neue',sans-serif;font-size:1rem;letter-spacing:0.1em;cursor:pointer;">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
 <!-- SOCIAL STRIP -->
 <div class="social-strip">
   <p>Follow our work</p>
@@ -2106,9 +2435,91 @@
     }
   }
 
+  // ── Business Quote Modal ──
+  function openBusinessModal() {
+    document.getElementById('business-form-wrap').style.display = 'block';
+    document.getElementById('business-modal-success').style.display = 'none';
+    document.getElementById('business-submit-btn').textContent = 'Send Quote Request';
+    document.getElementById('business-submit-btn').disabled = false;
+    document.getElementById('biz-company').value = '';
+    document.getElementById('biz-name').value = '';
+    document.getElementById('biz-email').value = '';
+    document.getElementById('biz-phone').value = '';
+    document.getElementById('biz-type').value = '';
+    document.getElementById('biz-volume').value = '';
+    document.getElementById('biz-details').value = '';
+
+    document.getElementById('business-modal-overlay').classList.add('open');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeBusinessModal() {
+    document.getElementById('business-modal-overlay').classList.remove('open');
+    document.body.style.overflow = '';
+  }
+
+  function closeBusinessModalOnOverlay(e) {
+    if (e.target === document.getElementById('business-modal-overlay')) {
+      closeBusinessModal();
+    }
+  }
+
+  async function submitBusinessQuote() {
+    const company = document.getElementById('biz-company').value.trim();
+    const name = document.getElementById('biz-name').value.trim();
+    const email = document.getElementById('biz-email').value.trim();
+
+    if (!company || !name || !email) {
+      alert('Please enter your business name, your name, and email.');
+      return;
+    }
+
+    const phone = document.getElementById('biz-phone').value;
+    const type = document.getElementById('biz-type').value;
+    const volume = document.getElementById('biz-volume').value;
+    const details = document.getElementById('biz-details').value;
+
+    const btn = document.getElementById('business-submit-btn');
+    btn.textContent = 'Sending...';
+    btn.disabled = true;
+
+    const formData = new FormData();
+    formData.append('company', company);
+    formData.append('name', name);
+    formData.append('email', email);
+    formData.append('phone', phone);
+    formData.append('business_type', type);
+    formData.append('estimated_volume', volume);
+    formData.append('details', details);
+    formData.append('_subject', `Business Quote Request: ${company}`);
+
+    try {
+      const res = await fetch('https://formspree.io/f/xnjradgr', {
+        method: 'POST',
+        body: formData,
+        headers: { 'Accept': 'application/json' }
+      });
+      if (res.ok) {
+        document.getElementById('business-form-wrap').style.display = 'none';
+        document.getElementById('business-modal-success').style.display = 'block';
+      } else {
+        btn.textContent = 'Send Quote Request';
+        btn.disabled = false;
+        alert('Something went wrong. Please email copperheadlaserco@gmail.com directly.');
+      }
+    } catch (err) {
+      btn.textContent = 'Send Quote Request';
+      btn.disabled = false;
+      alert('Connection error. Please email copperheadlaserco@gmail.com directly.');
+    }
+  }
+
   // Close modal on Escape key
   document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape') closeCollectionModal();
+    if (e.key === 'Escape') {
+      closeCollectionModal();
+      closeBusinessModal();
+    }
   });
 
 </script>
